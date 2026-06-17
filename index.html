@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEPTHXPO — Wallpapers That Feel Alive</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+        .feature-strip {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 4rem;
+        }
+        .strip-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .strip-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,255,255,0.2);
+        }
+        @media (max-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-actions { justify-content: center; }
+            .feature-strip { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">DEPTHXPO</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Beta Access</a>
+    </nav>
+
+    <main class="container">
+        <section class="hero-grid">
+            <div class="hero-text">
+                <h1>Wallpapers That<br><span style="background: var(--accent-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Feel Alive</span></h1>
+                <p>Turn your phone screen into a realistic 3D parallax window that responds instantly to every shift, tilt, and touch dynamic gesture.</p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn btn-primary">Join the Waitlist</a>
+                    <a href="features.html" class="btn btn-secondary">See Features</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="phone-mockup" id="interactivePhone">
+                    <div class="phone-notch"></div>
+                    <div class="parallax-wallpaper-container" id="wallpaperStage">
+                        <div class="layer layer-bg"></div>
+                        <div class="layer layer-mid" style="transform: translateZ(20px);"></div>
+                        <div class="layer layer-fg" style="transform: translateZ(50px);">
+                            <div class="fg-element"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-strip">
+            <div class="strip-card" onclick="window.location.href='features.html'">
+                <h3>3D Depth Effects &rarr;</h3>
+                <p>Layered parallax assets separated cleanly across axes.</p>
+            </div>
+            <div class="strip-card" onclick="window.location.href='features.html'">
+                <h3>Parallax Tilt &rarr;</h3>
+                <p>Fluid, real-time reactive gyroscope tracking engine hardware control.</p>
+            </div>
+            <div class="strip-card" onclick="window.location.href='features.html'">
+                <h3>Live Widgets &rarr;</h3>
+                <p>Smart context time and space-optimized elegant clocks.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <a href="#" class="footer-social">𝕏</a>
+        <p class="footer-copy">&copy; 2026 DEPTHXPO. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const card = document.getElementById('interactivePhone');
+        const stage = document.getElementById('wallpaperStage');
+        
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left - (rect.width/2);
+            const y = e.clientY - rect.top - (rect.height/2);
+            
+            // Map movement constraints to dynamic rotation degrees
+            stage.style.transform = `rotateY(${x * 0.15}deg) rotateX(${-y * 0.15}deg)`;
+        });
+        
+        card.addEventListener('mouseleave', () => {
+            stage.style.transform = 'rotateY(0deg) rotateX(0deg)';
+        });
+    </script>
+</body>
+</html>
