@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us — DEPTHXPO</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .narrative-container {
+            max-width: 680px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        .narrative-container p {
+            margin-bottom: 1.8rem;
+        }
+        .tech-strip {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 4rem 0;
+        }
+        .badge {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 12px;
+            font-family: var(--font-heading);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .badge-dot { width: 8px; height: 8px; border-radius: 50%; }
+        .blue-dot { background: #02569B; }
+        .cyan-dot { background: #00C4B4; }
+        
+        .connect-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 3rem;
+            border-radius: 24px;
+            text-align: center;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">DEPTHXPO</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Beta Access</a>
+    </nav>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Why DEPTHXPO Exists</h1>
+            <p>The journey behind bringing the canvas alive.</p>
+        </div>
+
+        <article class="narrative-container">
+            <p>Modern mobile phones feature highly advanced display panels, yet standard user backgrounds remain fixed and flat. DEPTHXPO was created to bridge this gap between display hardware capabilities and UI visuals.</p>
+            
+            <p>Developed entirely by a solo indie creator, this project began out of a passion for clean UI design, gaming aesthetics, and fluid system responsiveness. The goal was to build a native mobile engine that makes custom layers interact smoothly without draining battery power.</p>
+
+            <p>Using Google's powerful Flutter framework, the engine hooks directly into low-level acceleration pipelines to render fluid, multi-layered visual experiences at a locked 60+ FPS on Android devices.</p>
+        </article>
+
+        <section class="tech-strip">
+            <div class="badge"><span class="badge-dot blue-dot"></span> Flutter</div>
+            <div class="badge"><span class="badge-dot cyan-dot"></span> Dart Engine</div>
+        </section>
+
+        <section class="connect-box">
+            <h2>Follow the Development Journey</h2>
+            <p style="margin-bottom: 1.5rem;">We broadcast transparent builds, asset design timelines, and performance optimizations live on social platforms.</p>
+            <a href="#" class="btn btn-secondary">Connect on 𝕏 / Twitter</a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <a href="#" class="footer-social">𝕏</a>
+        <p class="footer-copy">&copy; 2026 DEPTHXPO. All rights reserved.</p>
+    </footer>
+</body>
+</html>
