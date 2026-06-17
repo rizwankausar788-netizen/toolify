@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features — DEPTHXPO</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .feature-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 8rem;
+        }
+        .feature-block.reverse {
+            direction: rtl;
+        }
+        .feature-block.reverse .feature-info {
+            direction: ltr;
+        }
+        .feature-info h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #fff; }
+        
+        /* Custom Wallpapers Mock Variant Renderers */
+        .wp-overlay { background: radial-gradient(circle, #1e003a 0%, #030008 100%); position: relative;}
+        .particle { position: absolute; width: 6px; height: 6px; background: #FFF; border-radius: 50%; opacity: 0.3; animation: floatUp 4s infinite linear; }
+        @keyframes floatUp { 0% { transform: translateY(500px); opacity: 0; } 50% { opacity: 0.6; } 100% { transform: translateY(-20px); opacity: 0; } }
+
+        /* Pricing Table */
+        .pricing-section { margin-top: 6rem; text-align: center; }
+        .pricing-table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 700px;
+            margin: 3rem auto;
+            gap: 2rem;
+        }
+        .price-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            text-align: left;
+        }
+        .price-card.premium {
+            border: 2px solid var(--primary-purple);
+            box-shadow: 0 0 30px rgba(155, 81, 224, 0.2);
+            position: relative;
+        }
+        .price-card.premium::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: -12px; right: 20px;
+            background: var(--primary-purple);
+            font-size: 0.75rem; font-weight: bold; padding: 2px 10px; border-radius: 10px;
+        }
+        .price-card h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+        .price-list { list-style: none; margin: 2rem 0; }
+        .price-list li { margin-bottom: 0.8rem; font-size: 0.95rem; }
+        .price-list li.cross { color: rgba(255,255,255,0.3); }
+        
+        @media (max-width: 768px) {
+            .feature-block, .feature-block.reverse { grid-template-columns: 1fr; direction: ltr; gap: 2rem; text-align: center;}
+            .pricing-table { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">DEPTHXPO</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html" class="active">Features</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary" style="padding: 0.5rem 1.2rem; font-size: 0.85rem;">Beta Access</a>
+    </nav>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Everything DEPTHXPO Can Do</h1>
+            <p>Engineered to transform your user interface into a visual experience.</p>
+        </div>
+
+        <section class="feature-block">
+            <div class="feature-info">
+                <h2>3D Depth Effects</h2>
+                <p>Our intelligent engine parses artwork into discrete visual foreground, middle, and background operational planes. It delivers spatial immersion that enhances design depth without shifting layout control anchors.</p>
+            </div>
+            <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <div class="parallax-wallpaper-container" style="background: linear-gradient(135deg, #110022, #001133); display:flex; align-items:center; justify-content:center;">
+                     <div style="width:120px; height:120px; border: 4px dashed var(--primary-cyan); border-radius:50%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-block reverse">
+            <div class="feature-info">
+                <h2>Animated Overlays</h2>
+                <p>Inject life into static scenery with fluid ambient overlays. Experience natural dust particles, real-time light flares, and responsive micro-weather fluctuations shifting directly on your device wallpaper glass surface.</p>
+            </div>
+            <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <div class="parallax-wallpaper-container wp-overlay">
+                    <div class="particle" style="left:20%; animation-delay: 0s;"></div>
+                    <div class="particle" style="left:50%; animation-delay: 1.5s;"></div>
+                    <div class="particle" style="left:80%; animation-delay: 0.8s;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-block">
+            <div class="feature-info">
+                <h2>Parallax Tilt</h2>
+                <p>Leveraging high-frequency Android gyroscope hardware matrix sampling, depth translation transforms smoothly as you tilt your phone. Experience high-framerate visuals with minimal battery draw.</p>
+            </div>
+            <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <div class="parallax-wallpaper-container" style="background: #020208; display:flex; align-items:center; justify-content:center;">
+                    <div style="width: 100px; height:200px; background:var(--accent-gradient); transform: skewX(15deg); filter: blur(5px); opacity:0.7;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feature-block reverse">
+            <div class="feature-info">
+                <h2>Live Clock Widgets</h2>
+                <p>Time configurations map natively into the geometric design lines of our system wallpapers. Pass typography fields behind physical elements to complete an impressive 3D depth aesthetic look.</p>
+            </div>
+            <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <div class="parallax-wallpaper-container" style="background:#09090E; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                    <h1 style="font-size: 3.5rem; font-family:'Space Grotesk'; color: rgba(255,255,255,0.15); margin-bottom:-20px;">11:45</h1>
+                    <div style="width:130px; height:40px; background:rgba(255,255,255,0.9); border-radius:12px; z-index:2; transform: translateZ(10px);"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <h2>Choose Your Experience Tier</h2>
+            <div class="pricing-table">
+                <div class="price-card">
+                    <h3>Free Pack</h3>
+                    <p>Essential engine components.</p>
+                    <ul class="price-list">
+                        <li>✓ 10+ Parallax Templates</li>
+                        <li>✓ Basic Gyroscope Tilt</li>
+                        <li class="cross">✗ Premium Artist Assets</li>
+                        <li class="cross">✗ Advanced Particle Overlays</li>
+                    </ul>
+                </div>
+                <div class="price-card premium">
+                    <h3>Premium Club</h3>
+                    <p>Complete control parameters.</p>
+                    <ul class="price-list">
+                        <li>✓ Unlimited Wallpaper Imports</li>
+                        <li>✓ All Premium Dynamic Overlays</li>
+                        <li>✓ Complex Clock Customizations</li>
+                        <li>✓ Complete Ad-free Architecture</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary" style="display:block; width:100%;">Get Premium</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="features.html">Features</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <a href="#" class="footer-social">𝕏</a>
+        <p class="footer-copy">&copy; 2026 DEPTHXPO. All rights reserved.</p>
+    </footer>
+</body>
+</html>
